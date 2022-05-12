@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .center_div {
+                margin: 0 auto;
+                width:50%!important;
+                padding-top: 3rem!important;
+            }
+            .container2{
+                position: relative;
+            }
+            .form{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 70%;
+                }
+            @media only screen and (min-width: 700px){
+            .form{
+                width: 40%;
+                }
+            }
+
+            @media only screen and (min-width: 1200px){
+            .form{
+                width: 30%;
+                }
+            }
+            
+        </style>
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+        <!-- MDB -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css" rel="stylesheet"/>
+    </head>
+    <body>
+
+
+        <div class="container2 form">
+            <h2 style="text-align: center;">Dados Pessoais</h2><br>
+            <form method="post" action="/form">
+                <!-- Name input -->
+                <div class="form-outline mb-4">
+                  <input type="text" id="nome" name="nome" class="form-control" value="<%= nome %>" />
+                  <label class="form-label" for="form4Example1">Nome</label>
+                </div>
+              
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" id="email" name="email" class="form-control" value="<%= email %>" />
+                  <label class="form-label" for="form4Example2">Email</label>
+                </div>
+              
+                <!-- Message input -->
+                <div class="form-outline mb-4">
+                    <input type="text" id="cpf" name="cpf" class="form-control" />
+                    <label class="form-label" for="form4Example1">CPF</label>
+                  </div>
+                  <input type="hidden" id="code" name="code" value="<%= code %>">    
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">Iniciar</button>
+              </form>
+            </div>
+
+ 
+
+
+        <div class="modal_footer">
+            <!-- Modal Footer -->
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"></script>
+    </body>
+</html>

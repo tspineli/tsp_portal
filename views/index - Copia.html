@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            .modal_container {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+            }
+            .modal_header,
+            .modal_footer {
+                flex: 0 0 auto;
+            }
+            .modal_content {
+                flex: 1 1 0%;
+                overflow: auto;
+            }
+        </style>
+    </head>
+    <body class="modal_container">
+        <div class="modal_header">
+            <!-- Modal Header -->
+        </div>
+        <div class="modal_content">
+            <h1>Teste TSP</h1>
+
+            <video id="player" controls autoplay></video>
+            <button id="capture">Capture</button>
+            <canvas id="canvas" width=960 height=1280></canvas>
+
+
+
+        </div>
+        <div class="modal_footer">
+            <!-- Modal Footer -->
+        </div>
+        <script>  const player = document.getElementById('player');  const canvas = document.getElementById('canvas');  const context = canvas.getContext('2d');  const captureButton = document.getElementById('capture');
+         const constraints = {    video: {      width: {        ideal: 1280      },      height: {        min: 720      },      facingMode: 'environment'  }  };
+         captureButton.addEventListener('click', () => {context.drawImage(player, 0, 0, canvas.width, canvas.height);    document.getElementById("player").style.display = "none";  });
+         navigator.mediaDevices.getUserMedia(constraints)    .then((stream) => {      player.srcObject = stream;    });
+      </script>
+    </body>
+</html>
